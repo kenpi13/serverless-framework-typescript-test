@@ -3,7 +3,8 @@ import type { AWS } from '@serverless/typescript';
 import hello from '@functions/hello';
 
 const serverlessConfiguration: AWS = {
-  service: 'serverless-framework-typescript-test',
+  // service名　https://note.com/dafujii/n/n811f00608c88　長すぎると怒られる
+  service: 'serverless-typescript-test',
   frameworkVersion: '3',
   plugins: ['serverless-esbuild'],
   provider: {
@@ -17,6 +18,7 @@ const serverlessConfiguration: AWS = {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
       NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000',
     },
+    region: 'ap-northeast-1'
   },
   // import the function via paths
   functions: { hello },
